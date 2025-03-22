@@ -130,3 +130,34 @@
     padding: 10px;
 }
 
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "contenido"
+            "footer";
+    }
+
+    .sidebar {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        margin-top: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid-inicio, .grid-pelicula, .grid-series {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+}
