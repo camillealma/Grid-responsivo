@@ -130,3 +130,156 @@
     padding: 10px;
 }
 
+@media (min-width: 768px) {
+    .container {
+      grid-template-columns: auto minmax(0,1fr);
+      grid-template-areas:
+        "sidebar header"
+        "sidebar contenido"
+        "sidebar footer";
+      gap: 20px; /* Espaciado entre áreas */
+    }
+  
+   .sidebar {
+      display: block; /* Mostrar sidebar en pantallas grandes */
+      grid-area: sidebar;
+      background-color: #111;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+   }
+  
+   .sidebar ul {
+      list-style-type: none; 
+      margin-top :30px
+   }
+  }
+  Cambios realizados:
+  Uso de media queries:
+  
+  Se agregó un @media (min-width) para reorganizar el diseño en pantallas más grandes.
+  
+  En pantallas pequeñas, el sidebar se oculta y el diseño se simplifica a una sola columna.
+  
+  Unidades flexibles:
+  
+  Se utilizaron unidades relativas como calc() y porcentajes para ajustar tamaños dinámicamente.
+  
+  Grid adaptable:
+  
+  La propiedad grid-template-columns usa repeat(auto-fit, minmax()) para que las columnas se ajusten automáticamente al espacio disponible.
+  
+  Tipografía responsiva:
+  
+  El tamaño del texto se ajusta con calc() para mejorar la legibilidad en diferentes dispositivos.
+  
+  Este código asegura que el diseño sea funcional y estético tanto en dispositivos móviles como en pantallas más grandes.
+  
+  que sea de 480
+  que sea de 480
+  
+  Respuesta
+  
+  Fuentes
+  21
+  Para que el diseño sea apto para dispositivos con un ancho máximo de 480px, se deben implementar media queries específicas para ajustar el diseño en pantallas pequeñas. Aquí tienes un ejemplo adaptado del código proporcionado en el archivo cinemastyle.css:
+  
+  css
+  /* Estilos generales */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "sidebar header"
+      "sidebar contenido"
+      "sidebar footer";
+    min-height: 100vh;
+    background-color: #000;
+    color: white;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #111;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+  }
+  
+  .sidebar li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+  }
+  
+  .site-title {
+    font-size: calc(1rem + 1vw);
+    font-weight: bold;
+    color: #ff3333;
+  }
+  
+  .contenido {
+    grid-area: contenido;
+    text-align: center;
+  }
+  
+  
+  
+  .grid-inicio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.grid-inicio img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.footer {
+    grid-area: footer;
+    background-color: #111;
+    text-align: center;
+    padding: 10px;
+}
